@@ -1,0 +1,107 @@
+Dialog Parameters: 
+{
+  "simulation_epoch_size": 100, 
+  "slot_err_mode": 0, 
+  "diaact_nl_pairs": "./deep_dialog/data/dia_act_nl_pairs.v6.json", 
+  "save_check_point": 10, 
+  "episodes": 1, 
+  "predict_mode": false, 
+  "cmd_input_mode": 0, 
+  "goal_file_path": "./deep_dialog/data/user_goals_first_turn_template.part.movie.v1.p", 
+  "max_turn": 40, 
+  "experience_replay_pool_size": 1000, 
+  "write_model_dir": "./deep_dialog/checkpoints/rl_agent/", 
+  "usr": 1, 
+  "auto_suggest": 0, 
+  "run_mode": 2, 
+  "trained_model_path": "./deep_dialog/checkpoints/rl_agent/noe2e/agt_9_478_500_0.98000.p", 
+  "success_rate_threshold": 0.3, 
+  "nlu_model_path": "./deep_dialog/models/nlu/lstm_[1468447442.91]_39_80_0.921.p", 
+  "epsilon": 0, 
+  "batch_size": 16, 
+  "learning_phase": "all", 
+  "nlg_model_path": "./deep_dialog/models/nlg/lstm_tanh_relu_[1468202263.38]_2_0.610.p", 
+  "act_set": "./deep_dialog/data/dia_acts.txt", 
+  "movie_kb_path": "./deep_dialog/data/movie_kb.1k.p", 
+  "slot_err_prob": 0.0, 
+  "warm_start": 1, 
+  "warm_start_epochs": 100, 
+  "dict_path": "./deep_dialog/data/dicts.v3.p", 
+  "intent_err_prob": 0.0, 
+  "slot_set": "./deep_dialog/data/slot_set.txt", 
+  "act_level": 0, 
+  "dqn_hidden_size": 80, 
+  "agt": 9, 
+  "split_fold": 5, 
+  "gamma": 0.9
+}
+trained DQN Parameters: {
+  "simulation_epoch_size": 100, 
+  "slot_err_mode": 0, 
+  "diaact_nl_pairs": "./deep_dialog/data/dia_act_nl_pairs.v6.json", 
+  "save_check_point": 10, 
+  "episodes": 600, 
+  "predict_mode": false, 
+  "goal_file_path": ".\\deep_dialog\\data\\user_goals_first_turn_template.part.movie.v1.p", 
+  "max_turn": 40, 
+  "act_level": 0, 
+  "write_model_dir": ".\\deep_dialog\\checkpoints\\rl_agent\\11092016_noe2e\\", 
+  "usr": 1, 
+  "auto_suggest": 0, 
+  "run_mode": 3, 
+  "trained_model_path": null, 
+  "success_rate_threshold": 0.3, 
+  "nlu_model_path": "./deep_dialog/models/nlu/lstm_[1468447442.91]_39_80_0.921.p", 
+  "epsilon": 0, 
+  "batch_size": 16, 
+  "nlg_model_path": "./deep_dialog/models/nlg/lstm_tanh_relu_[1468202263.38]_2_0.610.p", 
+  "act_set": "./deep_dialog/data/dia_acts.txt", 
+  "movie_kb_path": ".\\deep_dialog\\data\\movie_kb.1k.json", 
+  "slot_err_prob": 0.0, 
+  "warm_start": 1, 
+  "warm_start_epochs": 120, 
+  "dict_path": "./deep_dialog/data/dicts.v3.json", 
+  "intent_err_prob": 0.0, 
+  "slot_set": "./deep_dialog/data/slot_set.txt", 
+  "experience_replay_pool_size": 1000, 
+  "dqn_hidden_size": 80, 
+  "agt": 9, 
+  "gamma": 0.9
+}
+New episode, user goal:
+{
+  "request_slots": {
+    "ticket": "UNK"
+  }, 
+  "diaact": "request", 
+  "inform_slots": {
+    "city": "seattle", 
+    "numberofpeople": "2", 
+    "theater": "regal meridian 16", 
+    "starttime": "9:30 pm", 
+    "date": "tomorrow", 
+    "moviename": "the witch"
+  }
+}
+Turn 0 usr: request, inform_slots: {'moviename': 'the witch', 'theater': 'regal meridian 16'}, request_slots: {'ticket': 'UNK'}
+Turn 0 usr: Can I get tickets for the witch at regal meridian 16?
+Turn 1 sys: request, inform_slots: {}, request slots: {'city': 'UNK'}
+Turn 1 sys: Which city would you like?
+Turn 2 usr: inform, inform_slots: {'city': 'seattle'}, request_slots: {}
+Turn 2 usr: I want to watch at seattle.
+Turn 3 sys: inform, inform_slots: {'starttime': '9:30 pm'}, request slots: {}
+Turn 3 sys: 9:30 pm is available.
+Turn 4 usr: inform, inform_slots: {'numberofpeople': '2'}, request_slots: {}
+Turn 4 usr: I want 2 tickets please!
+Turn 5 sys: inform, inform_slots: {'date': 'tomorrow'}, request slots: {}
+Turn 5 sys: tomorrow is available.
+Turn 6 usr: request, inform_slots: {}, request_slots: {'ticket': 'UNK'}
+Turn 6 usr: Could you help me to book the tickets?
+Turn 7 sys: inform, inform_slots: {'city': 'seattle', 'numberofpeople': '2', 'theater': 'regal meridian 16', 'starttime': '9:30 pm', 'date': 'tomorrow', 'taskcomplete': 'Ticket Available', 'moviename': 'the witch'}, request slots: {}
+Turn 7 sys: Great - I was able to purchase 2 tickets for you to see the witch tomorrow at regal meridian 16 theater in seattle at 9:30 pm.
+Turn 8 usr: thanks, inform_slots: {}, request_slots: {'ticket': 'UNK'}
+Turn 8 usr: thank you goodbye
+Turn 9 sys: thanks, inform_slots: {}, request slots: {}
+Turn 9 sys: Thank you
+simulation episode 0: Success
+simulation success rate 1.0, ave reward 76.0, ave turns 10.0
